@@ -1,0 +1,25 @@
+<div class="item-accordion w-full inline-block overflow-hidden relative border-b border-black group">
+    <div class="accordion-header flex items-center py-4 xl:py-5 gap-5 cursor-pointer tracking-1">
+        <span class="text-sm md:text-base lg:text-lg  font-medium text-gray-500 opacity-46 pointer-events-none group-hover:opacity-100 transition">(@@itemAccordionSmall.number)</span>
+        <h3 class="text-sm md:text-base lg:text-lg  font-medium text-gray-500 opacity-46 inline-block group-hover:opacity-100 transition max-w-130.5">@@itemAccordionSmall.title</h3>
+        <i class="w-6 lg:w-8 2xl:w-9 h-fit cursor-pointer flex-none ms-auto">
+            <svg class="w-full h-auto" width="36" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 17H29.375" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.6875 5.3125V28.6875" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </i>
+    </div>
+    <div class="accordion-content" style="display: none;">
+        <div class="grow ps-11 md:ps-12 lg:ps-13.5 pr-10 sm:pr-15 md:pr-20 lg:pr-25 xl:pr-30 2xl:pr-35 md:pt-2 lg:pt-4.5 pb-6 md:pb-8 lg:pb-10 xl:pb-13">
+            <p class="text-gray-700 text-sm md:text-base tracking-1 font-medium mb-3 md:mb-4.5">@@itemAccordionSmall.paragraph</p>
+            <a href="@@itemAccordionSmall.linkHref" class="flex items-center gap-2 lg:gap-4 text-nowrap text-xs md:text-sm font-medium tracking-15 text-black w-fit hover:[&>i]:rotate-45 rtl:hover:[&>i]:-rotate-45">@@itemAccordionSmall.linkText
+                <i class="size-4 rtl:-scale-x-100 md:size-4.5 transition">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.25 12.75L12.75 5.25" stroke="currentColor" class="stroke-blue-600" stroke-width="1.65466" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M5.25 5.25H12.75V12.75" stroke="currentColor" class="stroke-blue-600" stroke-width="1.65466" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </i>
+            </a>
+        </div>
+    </div>
+</div>

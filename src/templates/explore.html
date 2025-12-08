@@ -1,0 +1,175 @@
+@@include('../includes/headers/header.html', {
+    "header": {
+        "class": "header-transparent"
+    }
+})
+
+<section class="bg-gray-500 relative z-1">
+    <div class="absolute w-full h-full full-height">
+        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+            <source src="videos/video-explore.mp4" type="video/mp4" />
+        </video>
+        <span class="absolute top-0 start-0 w-full h-full bg-[linear-gradient(0deg,rgba(102,66,56,0.20)_0%,rgba(102,66,56,0.20)_100%),linear-gradient(0deg,rgba(42,54,85,0.32)_0%,rgba(42,54,85,0.32)_100%),linear-gradient(180deg,rgba(45,57,85,0.73)_0%,rgba(45,57,85,0.20)_20%)] mix-blend-multiply"></span>
+    </div>    
+    <div class="container relative z-1 min-h-178.75 pt-43 full-height pb-25 flex flex-col bread-crumbs-white">
+        <div class="mb-7.5">
+            @@include('../includes/components/helpers/bread-crumbs.html', {
+                "breadcrumbs": {
+                    "homeHref": "/",
+                    "homeText": "Home",
+                    "parent1Href": "/",
+                    "parent1Text": "Link 1",
+                    "parent2Href": "/",
+                    "parent2Text": "Link 2",
+                    "current": "Explore"
+                }
+            })
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white  uppercase max-w-80 sm:max-w-90 md:max-w-110 lg:max-w-130 xl:max-w-180 mb-4 md:mb-5">The Trade Core of Abu Dhabi Food Hub</h1>
+        <p class="text-sm md:text-base font-normal  tracking-1 text-white max-w-110 md:max-w-130 mb-8">Explore our dedicated food market, trading zones & spaces available for B2B commerce. Learn more about how the Hub can help you grow your business.</p>
+        @@include('../includes/components/helpers/button/button-white.html', {
+            "button": {
+                "href": "/contact-us.html",
+                "text": "Get in Touch"
+            }
+        })
+        <div class="text-lg md:text-xl lg:text-22 xl:text-2xl text-white  tracking-1 max-w-66 md:max-w-72 lg:max-w-80 xl:max-w-85 absolute bottom-13.5 md:end-20 lg:end-30 xl:end-40 2xl:end-51">The Abu Dhabi Food Hub – KEZAD is being developed as an ecosystem for trading of all food categories</div>
+    </div>
+</section>
+
+<section class="pt-12 md:pt-15 lg:pt-18 xl:pt-21 w-full relative z-20 bg-white">
+    <div class="container z-20 relative">
+        <div class="mb-8 md:mb-12 xl:mb-16 2xl:mb-18">
+            @@include('../includes/components/helpers/head.html', {
+                "head": {
+                    "counter": "(02)",
+                    "title": "Markets &#64; The Hub",
+                    "colorText": "text-gray-600"
+                }
+            })
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 justify-between items-start mb-10 md:mb-15 xl:mb-23.5">
+            <div class="col-span-1">
+                @@include('../includes/components/helpers/title/subtitle-title.html', {
+                    "subtitleTitle": {
+                        "subtitle": "The Markets of Abu Dhabi Food Hub",
+                        "title": "Where Global Food Trade <span>Comes Together</span>"
+                    }
+                })
+            </div>
+            <div class="col-span-1 lg:pt-12">
+                <div class="columns-1 md:columns-2 space-y-4 md:space-y-6 text-sm md:text-base  font-medium  mb-9">
+                    <p>At the heart of Abu Dhabi Food Hub lies a series of purpose-built Markets and Pavilions — a dynamic ecosystem that brings together every segment of the global food value chain under one roof.</p>
+                    <p>Each pavilion is designed around a specific product category, from fresh produce and dry commodities to seafood, dairy, and gourmet foods, ensuring operational efficiency and optimal handling standards. Strategically located within KEZAD, the Markets serve as a central meeting point for producers, distributors, and buyers from across the world.</p>
+                    <p>Supported by world-class logistics, integrated cold chains, and digital trade systems, they simplify the movement of goods from source to shelf. More than a place to trade, the Markets represent a new model of collaboration and efficiency — connecting businesses, cultures, and opportunities to shape the future of food commerce in the region and beyond.</p>
+                </div>
+                <div class="btn-sm">
+                    @@include('../includes/components/helpers/button/button-black.html', {
+                        "button": {
+                            "href": "/market.html",
+                            "text": "Visit the markets"
+                        }
+                    })
+                </div>
+            </div>
+        </div>
+
+        @@include('../includes/sections/section-slider.html')
+    </div>
+
+    <span class="min-w-100.5 rtl:-scale-x-100 w-[106.4153vw] max-w-402 aspect-1609/1627 bg-[url(../images/brand-element.png)]  bg-cover bg-center inline-block absolute start-[clamp(-374px,-24.735vw,-94px)] bottom-[clamp(-745px,-49.2724vw,-186px)] pointer-events-none"></span>
+</section>
+
+<section class="pt-10 md:pt-15 lg:pt-20 xl:pt-25 2xl:pt-28 pb-15 md:pb-20 lg:pb-25 xl:pb-30 2xl:pb-34 w-full relative z-10 bg-white">
+    <div class="container z-20 relative">
+        <div class="mb-8 md:mb-12 xl:mb-14">
+            @@include('../includes/components/helpers/head.html', {
+                "head": {
+                    "counter": "(05)",
+                    "title": "Spaces",
+                    "colorText": "text-black"
+                }
+            })
+        </div>
+        <div class="w-full max-w-135 md:max-w-175 xl:max-w-219 ms-auto mb-15 md:mb-20 lg:mb-25 xl:mb-30 2xl:mb-36">
+            <span class="text-xs md:text-sm inline-block w-full font-bold  text-gray-900 mb-2 md:mb-3">Food Trade Zones & Spaces</span>
+            <h2 class="text-28 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold   mb-3 md:mb-5"><span>Strategically planned,</span><br/> with a space for everyone.</h2>
+            <div class="columns-1 md:columns-2 space-y-4 md:space-y-6 text-sm md:text-base  mb-5 md:mb-7 xl:mb-9 text-gray-700 tracking-1">
+                <p>Beyond its thriving markets, Abu Dhabi Food Hub offers a complete ecosystem of spaces designed to power every layer of the food value chain. From behind-the-scenes logistics to customer-facing experiences, these zones create an environment where business efficiency meets innovation. Flexible warehouses, cold chain facilities, and complementary activity zones enable seamless operations and value-added services, while the Farmers Market, Food Studio, and Retail & F&B clusters foster connection, creativity, and community.</p>        
+                <p>Supported by modern offices and integrated sustainability systems, these spaces are purpose-built to help businesses scale smarter, collaborate better, and thrive within the region’s most advanced food trade destination. Supported by modern offices and integrated sustainability systems, these spaces are purpose-built to help businesses scale smarter, collaborate better, and thrive within the region’s most advanced food trade destination.</p>
+            </div>
+            @@include('../includes/components/helpers/button/button-black.html', {
+                "button": {
+                    "href": "javascript:void(0)",
+                    "text": "Visit all"
+                }
+            })
+        </div>
+        <div class="slider-space d-inline-block w-full">
+            @@include('../includes/components/utilities/item-space.html', {
+                "spaceSlide": {
+                    "image": "images/image-caz.jpg",
+                    "alt": "Complementary Activity Zone",
+                    "title": "Complementary Activity Zone (CAZ)",
+                    "paragraph": "Finest wholesale food trading & logistics platform Step into one of the most comprehensive food trade zones in the Middle East. ecosystem to facilitate wholesale trade and logistics across all food categories.",
+                    "link": { "href": "market.html", "text": "More about ADFH" }
+                }
+            })
+            @@include('../includes/components/utilities/item-space.html', {
+                "spaceSlide": {
+                    "image": "images/image-farmer-market.jpg",
+                    "alt": "Farmers Market",
+                    "title": "Farmers\n                        Market",
+                    "paragraph": "Finest wholesale food trading & logistics platform Step into one of the most comprehensive food trade zones in the Middle East. ecosystem to facilitate wholesale trade and logistics across all food categories.",
+                    "link": { "href": "market.html", "text": "More about ADFH" }
+                }
+            })
+            @@include('../includes/components/utilities/item-space.html', {
+                "spaceSlide": {
+                    "image": "images/image-caz.jpg",
+                    "alt": "Complementary Activity Zone",
+                    "title": "Complementary Activity Zone (CAZ)",
+                    "paragraph": "Finest wholesale food trading & logistics platform Step into one of the most comprehensive food trade zones in the Middle East. ecosystem to facilitate wholesale trade and logistics across all food categories.",
+                    "link": { "href": "market.html", "text": "More about ADFH" }
+                }
+            })
+            @@include('../includes/components/utilities/item-space.html', {
+                "spaceSlide": {
+                    "image": "images/image-farmer-market.jpg",
+                    "alt": "Farmers Market",
+                    "title": "Farmers\n                        Market",
+                    "paragraph": "Finest wholesale food trading & logistics platform Step into one of the most comprehensive food trade zones in the Middle East. ecosystem to facilitate wholesale trade and logistics across all food categories.",
+                    "link": { "href": "market.html", "text": "More about ADFH" }
+                }
+            })
+            @@include('../includes/components/utilities/item-space.html', {
+                "spaceSlide": {
+                    "image": "images/image-caz.jpg",
+                    "alt": "Complementary Activity Zone",
+                    "title": "Complementary Activity Zone (CAZ)",
+                    "paragraph": "Finest wholesale food trading & logistics platform Step into one of the most comprehensive food trade zones in the Middle East. ecosystem to facilitate wholesale trade and logistics across all food categories.",
+                    "link": { "href": "market.html", "text": "More about ADFH" }
+                }
+            })
+            @@include('../includes/components/utilities/item-space.html', {
+                "spaceSlide": {
+                    "image": "images/image-farmer-market.jpg",
+                    "alt": "Farmers Market",
+                    "title": "Farmers\n                        Market",
+                    "paragraph": "Finest wholesale food trading & logistics platform Step into one of the most comprehensive food trade zones in the Middle East. ecosystem to facilitate wholesale trade and logistics across all food categories.",
+                    "link": { "href": "market.html", "text": "More about ADFH" }
+                }
+            })
+        </div>
+    </div>
+</section>
+
+<section class="pb-12 md:pb-15 xl:pb-20.5 bg-white">
+    <div class="container">
+        @@include('../includes/sections/section-card.html')
+    </div>
+</section>
+
+@@include('../includes/sections/section-about-partner.html')
+
+@@include('../includes/footer.html')

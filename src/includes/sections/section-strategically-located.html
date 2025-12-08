@@ -1,0 +1,49 @@
+<section class="bg-blue-500 pt-12 sm:pt-16 pb-12 sm:pb-16 md:pb-24 relative z-10">
+    <div class="container flex flex-col">
+        <div class="mb-8.5">
+            @@include('../components/helpers/head.html', {
+                "head": {
+                    "counter": "(04)",
+                    "title": "Strategically located",
+                    "colorText": "text-white"
+                }
+            })
+        </div>
+        <div class="inline-block w-full max-w-70 sm:max-w-80 md:max-w-90 lg:max-w-115 xl:max-w-140 2xl:max-w-165">
+            <h2 class="text-white text-28 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold mb-6 md:mb-8 lg:mb-11">Strategically located. with world-class logistics connections</h2>
+            <div class="flex gap-2 lg:gap-4 xl:gap-6 btn-sm">
+                @@include('../components/helpers/button/button-white-light.html', {
+                    "button": {
+                        "href": "javascript:void(0)",
+                        "text": "I'm a Seller"
+                    }
+                })
+                @@include('../components/helpers/button/button-white-light.html', {
+                    "button": {
+                        "href": "javascript:void(0)",
+                        "text": "I'm a Buyer"
+                    }
+                })
+            </div>
+        </div>
+        <div class="inline-block w-full md:ms-25 lg:ms-50 xl:ms-87.5 pt-10 md:pt-16 lg:pt-25 xl:pt-34.5 md:max-w-72.5">
+            <h3 class="text-white uppercase font-sans text-sm md:text-base lg:text-lg  font-medium tracking-1 mb-4">Huge land for huge production</h3>
+            <p class="text-white font-medium text-sm md:text-base tracking-1 mb-5 opacity-66">Step into one of the most comprehensive food trade zones in the Middle East. ecosystem to facilitate wholesale trade and logistics across all food categories.</p>
+            @@include('../components/helpers/link/link-white.html', {
+                "link": {
+                    "href": "/about-us.html",
+                    "text": "Learn more"
+                }
+            })
+        </div>
+        <div class="hidden md:block absolute top-2/4 -translate-y-2/4 end-0 lg:w-[660px] lg:h-[660px] xl:w-[850px] xl:h-[850px]">
+            <!-- <div class="globe js-globe">
+                <ul class="globe-list js-list"></ul>
+                <canvas class="globe-canvas js-canvas"></canvas>
+            </div> -->
+
+            <div id="app" class="w-full h-full"></div>
+        </div>
+        
+    </div>
+</section>

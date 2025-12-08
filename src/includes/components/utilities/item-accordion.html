@@ -1,0 +1,38 @@
+<div class="item-accordion w-full inline-block overflow-hidden relative border-b border-black group">
+    <div class="accordion-header flex justify-end py-4 md:py-6 xl:py-8 cursor-pointer">
+        <span class="static lg:absolute start-0 top-0 bottom-0 m-auto h-fit text-sm md:text-base lg:text-lg  text-gray-500 opacity-36 pointer-events-none group-hover:opacity-100 transition">@@itemAccordion.number</span>
+        <div class="flex items-center ps-4 md:ps-6 lg:ps-123 xl:ps-161 2xl:ps-182.5 w-full">
+            <h3 class="text-base md:text-lg lg:text-xl xl:text-22 font-medium text-black tracking-1 inline-block xl:max-w-66.5 font-sans">@@itemAccordion.title</h3>
+        </div>
+        <i class="w-6 lg:w-8 2xl:w-9 h-fit static lg:absolute end-0 top-0 bottom-0 m-auto cursor-pointer">
+            <svg class="w-full h-auto" width="36" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 17H29.375" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.6875 5.3125V28.6875" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </i>
+    </div>
+    <div class="accordion-content -mt-2.5 md:-mt-4" style="display: none;">
+        <div class="lg:ps-15 xl:ps-23 grid grid-cols-3 lg:flex lg:flex-nowrap lg:items-center gap-3 lg:gap-4 pb-6 lg:pb-8">
+            <figure class="relative lg:order-1 lg:w-50 xl:w-60 2xl:w-67.5 flex-none aspect-270/176 rounded-lg md:rounded-xl overflow-hidden">
+                <img src="@@itemAccordion.image1" alt="" class="w-full h-full object-cover object-center absolute inset-0">
+            </figure>
+            <figure class="relative lg:order-2 lg:w-50 xl:w-60 2xl:w-67.5 flex-none aspect-270/176 rounded-lg md:rounded-xl overflow-hidden">
+                <img src="@@itemAccordion.image2" alt="" class="w-full h-full object-cover object-center absolute inset-0">
+            </figure>
+            <figure class="relative lg:order-4 lg:w-50 xl:w-60 2xl:w-67.5 flex-none aspect-270/176 rounded-lg md:rounded-xl overflow-hidden">
+                <img src="@@itemAccordion.image3" alt="" class="w-full h-full object-cover object-center absolute inset-0">
+            </figure>
+            <div class="grow col-span-3 lg:order-3 xl:ps-10 2xl:ps-16 xl:pe-10 2xl:pe-12.5 mt-3 md:mt-0">
+                <p class="text-gray-700 text-sm md:text-base  tracking-1 font-medium mb-3 md:mb-4.5">@@itemAccordion.paragraph</p>
+                <a href="@@itemAccordion.linkHref" class="flex items-center gap-2 lg:gap-4 text-nowrap text-xs md:text-sm font-medium tracking-15 text-black w-fit hover:text-sky-500 rtl:hover:[&>i]:-rotate-45 hover:[&>i]:rotate-45">@@itemAccordion.linkText
+                    <i class="size-4 rtl:-scale-x-100 md:size-4.5 transition">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.25 12.75L12.75 5.25" stroke="currentColor" stroke-width="1.65466" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.25 5.25H12.75V12.75" stroke="currentColor" stroke-width="1.65466" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </i>
+                </a>
+            </div>            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="flex gap-2 items-center mb-6.5 ">
+    <i class="shrink-0 rtl:-scale-x-100">
+        <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 15.5556C26.1818 21.4815 16.7273 21.4815 10.9091 15.5556L0 4.44444C5.81819 -1.48148 15.2727 -1.48148 21.0909 4.44444L32 15.5556Z" class="fill-green-400" />
+        </svg>
+    </i>
+    <span class="inline-block text-gray-600 break-keep text-xs md:text-sm font-medium uppercase p-1 font-sans max-w-84">@@block.subtitle</span>
+</div>
+<h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-8 md:mb-10 xl:mb-13 sm:w-110 md:w-140 lg:w-137.5 xl:w-180 2xl:w-full">@@block.title</h2>
+<div class="columns-2xs space-y-4 md:space-y-6 text-sm md:text-base text-gray-700 mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-15">@@block.content</div>
+<div>
+    @@include('../button/button-black.html', {
+        "button": {
+            "href": "javascript:void(0)",
+            "text": "Join the hub"
+        }
+    })
+</div>

@@ -1,0 +1,157 @@
+@@include('../includes/headers/header.html')
+
+<section class=" relative pt-35 md:pt-40 lg:pt-45 xl:pt-54">
+    <div class="container relative flex flex-col md:flex-row md:items-start md:justify-between gap-6 md:gap-0">
+        <span class="pointer-events-none w-[clamp(282px,74.60vw,1128px)] aspect-1128/1096 inline-block absolute top-[clamp(-249px,-16.47vw,-140px)] end-[clamp(-276px,-18.25vw,-120px)] bg-[url('../images/brand-line-elements-b-8.png')] bg-no-repeat bg-center bg-cover"></span>
+        <div class="flex flex-col max-w-75 sm:max-w-100  md:max-w-115  lg:max-w-137.5 xl:max-w-169">
+            <div class="mb-7">
+                @@include('../includes/components/helpers/bread-crumbs.html', {
+                    "breadcrumbs": {
+                        "homeHref": "/",
+                        "homeText": "Home",
+                        "parent1Href": "/about-us.html",
+                        "parent1Text": "About Us",
+                        "parent2Href": "/about-us.html",
+                        "parent2Text": "Link 2",
+                        "current": "Why Us"
+                    }
+                })
+            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl uppercase font-extrabold mb-6 md:mb-8 xl:mb-11">The Region’s Gateway to Food Trade and Investment</h1>
+            @@include('../includes/components/helpers/button/button-black.html', {
+                "button": {
+                    "href": "/contact-us.html",
+                    "text": "Let’s connect"
+                }
+            })
+        </div>
+        <div class="relative flex justify-evenly md:block w-full md:w-auto md:-end-12">
+            <div id="image-1" class="md:absolute w-25 md:w-[clamp(132px,17.3941vw,263px)] md:top-[clamp(80px,9.14vw,138px)] md:end-[clamp(48px,8.14vw,123px)] translate-y-[60%] lg:translate-y-[70%] 2xl:translate-y-[80%]">
+                @@include('../includes/components/helpers/svg/motif.html', {
+                    "itemSvg": {
+                        "id": "about-shape-clip-1",
+                        "videoSrc": "videos/video-shape-1.mp4",
+                        "colorFill": "#496E15",
+                        "gradientStart": "#65A20E",
+                        "gradientEnd": "#8CD623",
+                        "gradientEndOpacity": "0"
+                    }
+                })
+            </div>
+            <div id="image-2" class="md:absolute w-25 md:w-[clamp(67px,8.8624338vw,134px)] md:top-[clamp(120px,15.21vw,230px)] md:end-[clamp(220px,38.10vw,576px)] translate-y-[120%] lg:translate-y-[145%] 2xl:translate-y-[175%]">
+                @@include('../includes/components/helpers/svg/motif.html', {
+                    "itemSvg": {
+                        "id": "about-shape-clip-2",
+                        "videoSrc": "videos/video-shape-2.mp4",
+                        "colorFill": "#283A57",
+                        "gradientStart": "#283A57",
+                        "gradientEnd": "#577EBD",
+                        "gradientEndOpacity": "0"
+                    }
+                })
+            </div>
+            <div id="image-3" class="md:absolute w-25 md:w-[clamp(90px,11.9047vw,180px)] md:top-[clamp(-111px,-7.34vw,-60px)] md:end-[clamp(180px,31.08vw,470px)] translate-y-[90%] lg:translate-y-[145%] 2xl:translate-y-[175%]">
+                @@include('../includes/components/helpers/svg/motif-curve.html', {
+                    "itemSvg": {
+                        "id": "about-shape-clip-3",
+                        "videoSrc": "videos/video-shape-3.mp4",
+                        "colorFill": "#288AB5",
+                        "gradientStart": "#0FB2DB",
+                        "gradientEnd": "#0A97D5",
+                        "gradientEndOpacity": "0"
+                    }
+                })
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-title relative pt-24 sm:pt-30 md:pt-36 lg:pt-48 xl:pt-60 2xl:pt-72 pb-12 sm:pb-14 md:pb-16 lg:pb-20 xl:pb-32.5">
+    <span class="pointer-events-none rtl:-scale-x-100 inline-block absolute bg-[url('../images/brand-line-elements-b-9.png')] bg-no-repeat bg-center bg-cover start-[clamp(-181px,-11.97vw,-60px)] top-[clamp(-62px,-4.10vw,-20px)] w-[clamp(277px,74.60vw,1108px)] aspect-1108/922"></span>
+    <div class="container">
+        @@include('../includes/components/helpers/title/title-paragrah.html', {
+            "titleParagraph": {
+                "line1": "Visionary &",
+                "line2": "Purpose-Driven",
+                "description": "We are the new face of global food trade—built on the strength of two industry leaders, AD Ports Group and Ghassan Aboud Group, and powered by a shared vision to reimagine how the world moves food."
+            }
+        })
+    </div>
+</section>
+
+<section class="relative">
+    <div class="container relative z-10">
+        <div class="flex flex-col-reverse lg:flex-row items-start justify-between 2xl:pe-15 w-full gap-10 lg:gap-0">
+            <div class="lg:max-w-[57%] xl:max-w-[57%] 2xl:max-w-[50.55%] flex-none w-full pt-2.5">
+                @@include('../includes/components/helpers/title/subtitle-title-paragrah-button.html', {
+                    "block": {
+                        "subtitle": "Ready to see the potential of one-stop-shop integrated ecosystem",
+                        "title": "Built on <span>Strength</span>. Designed for <span>Growth</span>.",
+                        "content": "<p>Abu Dhabi Food Hub is where opportunity meets advantage. Strategically located within KEZAD, between Abu Dhabi and Dubai, it connects your business to the world through seamless multimodal access by sea, air, road, and rail. The Hub combines decades of expertise in logistics, trade, and infrastructure to deliver unmatched value for the global food industry.</p><p>Here, businesses gain more than space — they gain an ecosystem. From temperature-controlled warehouses and processing units to value-added logistics and digital trade enablement, every element is designed to simplify operations and maximize efficiency. Supported by government-backed frameworks and a future-ready digital platform, the Hub ensures faster market entry, reduced costs, and sustainable growth.</p>"
+                    }
+                })
+            </div>
+            <figure class="rounded-2xl md:rounded-3xl w-full sm:w-1/2 lg:w-[39.1%] flex-none aspect-530/648 overflow-hidden relative">
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                    <source src="videos/video-why-us.mp4" type="video/mp4" />
+                </video>
+                <span class="absolute inset-0 z-10 bg-[linear-gradient(0deg,rgba(102,66,56,0.20)_0%,rgba(102,66,56,0.20)_100%),linear-gradient(0deg,rgba(42,54,85,0.59)_0%,rgba(42,54,85,0.59)_100%),linear-gradient(180deg,rgba(45,57,85,0.73)_0%,rgba(45,57,85,0.20)_20%)] mix-blend-screen"></span>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<section class=" text-center relative pt-16 pb-14 sm:pt-20 sm:pb-16 md:pt-24 md:pb-20 lg:pt-32 lg:pb-36 xl:pt-47 xl:pb-44">
+    <span class="pointer-events-none inline-block absolute bg-[url(../images/brand-line-elements-b-7.png)] bg-cover bg-center -start-20 -bottom-25 w-68.5 aspect-273.75/274 sm:-start-45 sm:-bottom-37.5 sm:w-105 md:-start-65 md:-bottom-50 md:w-140 lg:-start-105 lg:-bottom-57.5 lg:w-215 xl:-start-131 xl:-bottom-64 xl:w-274"></span>
+    <div class="container">
+        <span class="text-green-400 inline-block font-medium text-lg md:text-xl lg:text-22 xl:text-2xl mb-1">AD Food Hub isn’t just a place to trade</span>
+        <h2 class="font-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-w-110 sm:max-w-122 md:max-w-155 lg:max-w-185 xl:max-w-240 mx-auto">it’s where the next generation of global food commerce takes shape.</h2>
+    </div>
+</section>
+
+@@include('../includes/sections/section-strategically-located.html')
+
+<section class="bg-gray-500 py-12 md:py-16 lg:py-20 xl:py-25 2xl:py-27.5">
+    <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5">
+            @@include('../includes/components/utilities/item-wide-cta.html', {
+                "wideCta": {
+                    "linkHref": "/why-us.html",
+                    "imageSrc": "images/image-why-us.jpg",
+                    "imageAlt": "Our economic contribution",
+                    "title": "Our economic<br /> contribution",
+                    "description": "As a strategic public-private partnership between AD Ports Group and Ghassan Aboud Group, Abu Dhabi Food Hub is a key economic enabler for the UAE’s non-oil sector."
+                }
+            })
+            @@include('../includes/components/utilities/item-wide-cta.html', {
+                "wideCta": {
+                    "linkHref": "javascript:void(0)",
+                    "imageSrc": "images/image-leadership.jpg",
+                    "imageAlt": "Our economic contribution",
+                    "title": "Sustainability &<br /> Food Security",
+                    "description": "Abu Dhabi Food Hub plays a central role in enhancing food resilience across the region."
+                }
+            })
+            @@include('../includes/components/utilities/item-wide-cta.html', {
+                "wideCta": {
+                    "linkHref": "/why-us.html",
+                    "imageSrc": "images/image-why-us.jpg",
+                    "imageAlt": "Our economic contribution",
+                    "title": "Our economic<br /> contribution",
+                    "description": "As a strategic public-private partnership between AD Ports Group and Ghassan Aboud Group, Abu Dhabi Food Hub is a key economic enabler for the UAE’s non-oil sector."
+                }
+            })
+            @@include('../includes/components/utilities/item-wide-cta.html', {
+                "wideCta": {
+                    "linkHref": "javascript:void(0)",
+                    "imageSrc": "images/image-leadership.jpg",
+                    "imageAlt": "Our economic contribution",
+                    "title": "Sustainability &<br /> Food Security",
+                    "description": "Abu Dhabi Food Hub plays a central role in enhancing food resilience across the region."
+                }
+            })
+        </div>
+    </div>
+</section>
+
+@@include('../includes/footer.html')

@@ -1,0 +1,48 @@
+<div class="item-food rounded-xl lg:rounded-2xl group w-full aspect-540/709 overflow-hidden relative">
+    <!-- Poster image that shows before video loads -->
+    <figure class="absolute inset-0">
+        <img src="@@itemFood.posterImage" alt="@@itemFood.title" class="w-full h-full object-cover">
+    </figure>
+    <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+        <source src="@@itemFood.videoURL" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+
+    <span class="absolute inset-0 bg-blue-900 opacity-20"></span>
+
+    <div class="flex border-b border-gray-200/36 w-full absolute top-0 start-0 px-1 lg:px-2 xl:px-3">
+        <i class="w-9 md:w-12 lg:w-14 xl:w-17 aspect-square flex items-center justify-center border-e border-gray-200/36">
+            <span class="w-1/2 xl:w-auto h-auto inline-block opacity-35">@@itemFood.icon1SVG</span>
+        </i>
+        <i class="w-9 md:w-12 lg:w-14 xl:w-17 aspect-square flex items-center justify-center border-e border-gray-200/36">
+            <span class="w-1/2 xl:w-auto h-auto inline-block opacity-35">@@itemFood.icon2SVG</span>
+        </i>
+        <i class="w-9 md:w-12 lg:w-14 xl:w-17 aspect-square flex items-center justify-center border-e border-gray-200/36">
+            <span class="w-1/2 xl:w-auto h-auto inline-block opacity-35">@@itemFood.icon3SVG</span>
+        </i>
+    </div>
+    <div class="absolute bottom-0 w-full start-0 p-1 md:p-2 lg:p-3 xl:p-4">
+        <div class="bg-white rounded-lg md:rounded-lg p-2 sm:p-3 lg:p-4 xl:p-6 gap-3 lg:gap-4 xl:gap-5 flex items-end relative overflow-hidden">
+            <div class="shrink md:pb-8 lg:pb-0 lg:group-hover:pb-8 xl:group-hover:pb-11 transition">
+                <h3 class="font-sans text-black text-lg md:text-xl lg:text-22 xl:text-2xl tracking-1 md:mb-2.5"><a href="@@itemFood.linkHref" class="text-black">@@itemFood.title</a></h3>
+                <p class="text-blue-500 font-medium text-sm lg:text-base hidden md:inline-block">@@itemFood.description</p>
+                <a href="@@itemFood.linkHref" class="text-blue-500 hover:text-sky-500 hidden md:inline-block text-xs md:text-sm  font-medium absolute bottom-2 sm:bottom-3 lg:-bottom-6 start-2 sm:start-3 lg:start-4 xl:start-6 lg:group-hover:bottom-4 xl:group-hover:bottom-6">@@itemFood.linkText</a>
+            </div>
+            <span class="rounded-full hidden md:inline-block bg-gray-500 transition-colors duration-0 group-hover:delay-400 group-hover:bg-gray-300 md:size-8 lg:size-9 xl:size-10 appearance-none relative cursor-pointer overflow-hidden shrink-0">
+            <span class="absolute rtl:-scale-x-100 inset-0 m-auto size-0 transition bg-gray-300 group-hover:size-10 rounded-full"></span>
+                <i class="size-4.5 absolute inset-0 m-auto group-hover:translate-x-full group-hover:-translate-y-full transition">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.25 12.75L12.75 5.25" stroke="currentColor" class="stroke-gray-300" stroke-width="1.65466" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M5.25 5.25H12.75V12.75" stroke="currentColor" class="stroke-gray-300" stroke-width="1.65466" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </i>
+                <i class="size-4.5 absolute inset-0 m-auto -translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.25 12.75L12.75 5.25" stroke="currentColor" class="stroke-gray-500" stroke-width="1.65466" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M5.25 5.25H12.75V12.75" stroke="currentColor" class="stroke-gray-500" stroke-width="1.65466" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </i>
+            </span>
+        </div>
+    </div>
+</div>

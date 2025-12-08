@@ -1,0 +1,196 @@
+@@include('../includes/headers/header.html', {
+    "header": {
+        "class": "header-transparent"
+    }
+})
+
+<section class="relative pt-30 xl:pt-45 pb-40 md:pb-48 lg:pb-60 xl:pb-72 2xl:pb-77.5">
+    <figure class="w-full absolute inset-0">
+        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+            <source src="videos/video-market.mp4" type="video/mp4" />
+        </video>
+        <span class="absolute inset-0 [background:linear-gradient(0deg,rgba(102,66,56,0.10)_0%,rgba(102,66,56,0.10)_100%),linear-gradient(0deg,rgba(42,54,85,0.53)_0%,rgba(42,54,85,0.53)_100%),linear-gradient(180deg,rgba(45,57,85,0.73)_0%,rgba(45,57,85,0.20)_20%)] mix-blend-multiply"></span>
+    </figure>
+    <div class="container relative z-10">
+        <div class="max-w-120 lg:max-w-145 xl:max-w-174.5 flex-none w-full">
+            <div class="mb-7 bread-crumbs-white">
+                @@include('../includes/components/helpers/bread-crumbs.html', {
+                    "breadcrumbs": {
+                        "homeHref": "/",
+                        "homeText": "Home",
+                        "parent1Href": "/explore.html",
+                        "parent1Text": "Explore",
+                        "parent2Href": "/market.html",
+                        "parent2Text": "Market",
+                        "current": "Fruits & Vegetables market"
+                    }
+                })
+            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white">Fruits & Vegetables market</h1>
+        </div>
+    </div>
+</section>
+
+<section class="relative z-10">
+    <div class="container">
+        <div class="-mt-24 md:-mt-32 lg:-mt-40 xl:-mt-46.5 bg-white w-full rounded-xl p-4 sm:p-6 md:p-8 lg:p-12 xl:p-15 2xl:py-17 2xl:px-15">
+            <div class="lg:max-w-190 xl:max-w-249.5 mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-22">
+                <div class="w-full mb-8 md:mb-10 lg:mb-12 xl:mb-15 2xl:mb-20.5">
+                    <div class="flex gap-2 items-center mb-2 ">
+                        <i class="shrink-0 rtl:-scale-x-100">
+                            <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M32 15.5556C26.1818 21.4815 16.7273 21.4815 10.9091 15.5556L0 4.44444C5.81819 -1.48148 15.2727 -1.48148 21.0909 4.44444L32 15.5556Z" class="fill-green-400" />
+                            </svg>
+                        </i>
+                        <span class="text-gray-600 inline-block break-keep text-xs md:text-sm font-medium uppercase p-1 font-sans max-w-84">Ready to see the potential of one-stop-shop integrated ecosystem</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold font-sans">At the heart of Abu Dhabi Food Hub lies the <span>Fruits & Vegetables Market</span></h2>
+                </div>
+                <div class="inline-block w-full text-sm md:text-base text-gray-700  space-y-4 xl:space-y-6">
+                    <p>At the heart of Abu Dhabi Food Hub lies the Fruits & Vegetables Market — a vibrant, high-velocity trading environment
+                    built for speed, freshness, and scale. Designed around the daily rhythm of regional and international produce trade,
+                    this market connects importers, distributors, and wholesalers with an active network of buyers spanning retail chains,
+                    hotels, catering services, and re-exporters across the GCC and beyond.</p>
+                    <p>Every detail of the Fruits & Vegetables Market is engineered for performance. With dedicated segments for Fruits &
+                    Vegetables, O&P, and a Crossdock facility for direct dispatch, the market ensures fast turnover of perishable goods
+                    while maintaining optimal quality. Its proximity to cold chain facilities, pre-cooling units, and customs checkpoints
+                    keeps produce fresh and market-ready — minimizing handling times and reducing spoilage.</p>
+                    <p>For traders and distributors, the Hub’s integrated logistics ecosystem means less downtime and more opportunity. Whether
+                    you’re moving containers through Khalifa Port, storing in temperature-controlled warehouses, or distributing across the
+                    UAE, every link of the supply chain operates within reach. The on-site value-added services — from sorting and packaging
+                    to quality testing and labeling — further enhance efficiency and profitability.</p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row gap-8 lg:gap-10 xl:gap-15 2xl:gap-20 ">
+                <div class="grow -mt-1.5">
+                    <h3 class="font-semibold text-22 sm:text-2xl md:text-28 lg:text-3xl xl:text-4xl font-serif mb-6 lg:mb-8 xl:mb-10 2xl:mb-11">I’m looking to setup a business at the hub for the Food & Vegetable Market</h3>
+                    <div class="text-sm md:text-base text-gray-700  space-y-4 lg:space-y-5 xl:space-y-6 md:mb-8 xl:mb-11 2xl:mb-13">
+                        <p>The AD Food Hub is now open for business and if you are a trader, reseller or manufacturer in the Food and Vegetable
+                        category, register your interest today.</p>
+                        <p>You may also get in touch with us at <a class="text-sm md:text-base text-gray-700 font-bold underline" href="tel:+971 2 1234567">+971 2 1234567</a>.</p>
+                        <p>Our team will be in touch regarding your inquiry within 24 - 48 business hours to discuss your requirements.</p>
+                    </div>
+
+                    <div class="hidden md:inline-block w-full">
+                        @@include('../includes/components/helpers/brochure.html')
+                    </div>
+                </div>
+                <div class="bg-gray-100 rounded-xl xl:rounded-2xl py-6 lg:py-8 xl:py-11 px-4 lg:px-6 w-full md:max-w-[44.7%] flex-none">
+                    <h3 class="font-semibold text-22 sm:text-2xl md:text-28 lg:text-3xl xl:text-4xl font-serif mb-1">Get in Touch</h3>
+                    <p class="text-gray-900 text-xs md:text-sm  mb-5 md:mb-6 lg:mb-7 xl:mb-8 2xl:mb-9">Note: all fields are mandatory unless specified as optional</p>
+                    <form action="">
+                        <div class="grid grid-cols-12 gap-x-5 gap-y-5 xl:gap-y-6">
+                            <div class="col-span-12 md:col-span-6">
+                                @@include('../includes/components/helpers/input.html', {
+                                    "input": {
+                                        "id": "first-name",
+                                        "name": "firstName",
+                                        "type": "text",
+                                        "label": "First Name",
+                                        "placeholder": "First Name",
+                                        "inputClass": ""
+                                    }
+                                })
+                            </div>
+                            <div class="col-span-12 md:col-span-6">
+                                @@include('../includes/components/helpers/input.html', {
+                                    "input": {
+                                        "id": "last-name",
+                                        "name": "lastName",
+                                        "type": "text",
+                                        "label": "Last Name",
+                                        "placeholder": "Last Name",
+                                        "inputClass": ""
+                                    }
+                                })
+                            </div>
+                            <div class="col-span-12">
+                                @@include('../includes/components/helpers/input.html', {
+                                    "input": {
+                                        "id": "email",
+                                        "name": "email",
+                                        "type": "email",
+                                        "label": "Email address",
+                                        "placeholder": "info&#64;example.com",
+                                        "inputClass": ""
+                                    }
+                                })
+                            </div>
+                            <div class="col-span-12 md:col-span-6">
+                                @@include('../includes/components/helpers/input.html', {
+                                    "input": {
+                                        "id": "phone",
+                                        "name": "phone",
+                                        "type": "number",
+                                        "label": "Contact number",
+                                        "placeholder": "+971 xx xxxxxxx",
+                                        "inputClass": ""
+                                    }
+                                })
+                            </div>
+                            <div class="col-span-12 md:col-span-6">
+                                @@include('../includes/components/helpers/input.html', {
+                                    "input": {
+                                        "id": "company",
+                                        "name": "company",
+                                        "type": "text",
+                                        "label": "Company name",
+                                        "placeholder": "Your company name",
+                                        "inputClass": ""
+                                    }
+                                })
+                            </div>
+                            <div class="col-span-12">
+                                @@include('../includes/components/helpers/textarea.html', {
+                                    "textarea": {
+                                        "id": "message",
+                                        "name": "message",
+                                        "label": "Message",
+                                        "placeholder": "Message...",
+                                        "textareaClass": ""
+                                    }
+                                })
+                            </div>
+                            <div class="col-span-12">
+                                @@include('../includes/components/helpers/button/button-black.html', {
+                                    "button": {
+                                        "href": "javascript:void(0)",
+                                        "text": "Visit all"
+                                    }
+                                })
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="md:hidden inline-block w-full">
+                    @@include('../includes/components/helpers/brochure.html')
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class=" text-center relative pt-16 pb-14 sm:pt-20 sm:pb-16 md:pt-24 md:pb-20 lg:pt-32 lg:pb-36 xl:pt-47 xl:pb-36">
+    <span class="pointer-events-none inline-block absolute bg-[url(../images/brand-line-elements-b-12.png)] bg-cover bg-center -start-30 -bottom-20 w-70 sm:-start-50 sm:-bottom-30 sm:w-105 md:-start-75 md:-bottom-45 md:w-140 lg:-start-95 lg:-bottom-55 lg:w-190 xl:-start-119 xl:-bottom-69 xl:w-260.5 aspect-1042/1155 "></span>
+    <div class="container">
+        <span class="text-green-400 inline-block w-full font-medium text-lg sm:text-xl md:text-22 lg:text-2xl xl:text-28 mb-3">AD Food Hub isn’t just a place to trade</span>
+        <h2 class="font-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl  max-w-137.5 sm:max-w-160 md:max-w-190 lg:max-w-230 xl:max-w-305 mx-auto mb-4 md:mb-6 lg:mb-8 xl:mb-9 2xl:mb-11">Abu Dhabi Food Hub is where the world’s freshest produce meets the region’s fastest-growing market.</h2>
+        <h3 class="text-gray-500 font-medium text-base md:text-lg lg:text-xl xl:text-22 lg:max-w-265 xl:max-w-290 mx-auto mb-4 md:mb-6 lg:mb-8 xl:mb-12 2xl:mb-13">For buyers, this market offers a single, trusted destination to source fresh, high-quality produce from across the world. For sellers, it provides unmatched access, efficiency, and visibility — all within the region’s most advanced food trading ecosystem.</h3>
+        @@include('../includes/components/helpers/button/button-black.html', {
+            "button": {
+                "href": "/about-us.html",
+                "text": "Learn more"
+            }
+        })
+    </div>
+</section>
+
+<section class="pb-14">
+    <div class="container">
+        @@include('../includes/sections/section-card.html')
+    </div>
+</section>
+
+@@include('../includes/sections/section-about-partner.html')
+
+@@include('../includes/footer.html')

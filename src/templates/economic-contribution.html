@@ -1,0 +1,115 @@
+@@include('../includes/headers/header.html')
+
+<section class="relative pt-30 lg:pt-40 2xl:pt-47.5">
+    <div class="container relative z-10">
+        <div class="flex flex-col lg:flex-row items-start justify-between w-full gap-10 lg:gap-0">
+            <div class="md:max-w-[53%] 2xl:max-w-[48.5%] flex-none w-full">
+                <div class="mb-7">
+                    @@include('../includes/components/helpers/bread-crumbs.html', {
+                        "breadcrumbs": {
+                            "homeHref": "/",
+                            "homeText": "Home",
+                            "parent1Href": "/about-us.html",
+                            "parent1Text": "About Us",
+                            "parent2Href": "/why-us.html",
+                            "parent2Text": "Why Us",
+                            "current": "Economic Contribution"
+                        }
+                    })
+                </div>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold uppercase mb-2 lg:mb-3 xl:mb-4.5 max-w-100 md:max-w-137.5 xl:max-w-162.5 2xl:max-w-full">AD Food Hub’s Economic contribution</h2>
+                <h3 class="text-base text-gray-500 md:text-lg lg:text-xl xl:text-22  mb-5 md:mb-7.5">Abu Dhabi Food Hub is designed to support hundreds of tenants and contribute significantly to the UAE’s vision for economic diversification and food trade growth.</h3>
+                <div class="columns-2xs text-gray-700 space-y-4 md:space-y-6 text-sm md:text-base mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-15">
+                    <p>Abu Dhabi Food Hub is a key economic enabler driving the UAE’s non-oil growth and regional food trade leadership. As a public-private partnership between AD Ports Group and Ghassan Aboud Group, the Hub strengthens Abu Dhabi’s position as a gateway to the GCC, Middle East, Africa, and Asia.</p>
+                    <p>Strategically located within KEZAD and connected through world-class multimodal transport, it facilitates seamless cross-border trade, job creation, and SME activation. By attracting foreign investment and empowering regional producers, the Hub contributes to a more resilient, diversified economy — aligning with the UAE’s vision for sustainable growth and long-term food security.</p>
+                </div>
+                @@include('../includes/components/helpers/button/button-black.html', {
+                    "button": {
+                        "href": "javascript:void(0)",
+                        "text": "Join the hub"
+                    }
+                })
+            </div>
+        </div>
+        <div class="absolute hidden md:block w-[clamp(206px,54.21vw,824px)] -top-7.5 lg:top-[clamp(-95px,-6.25vw,-47px)] end-[clamp(-27px,-1.78vw,-14px)]">
+            <span class="pointer-events-none rtl:-scale-x-100 w-[clamp(407.5px,107.237vw,1630px)] aspect-1630/2081 inline-block absolute top-[clamp(-486px,-32vw,-121.5px)] end-[clamp(-754px,-49.605vw,-188.5px)] bg-[url('../images/brand-line-elements-b-10.png')] bg-no-repeat bg-center bg-cover mix-blend-multiply"></span>
+            <svg class="w-full h-auto rtl:-scale-x-100" width="824" height="730" viewBox="0 0 824 730" fill="none" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <mask id="mask0_9618_4617" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="162" y="64" width="495" height="665">
+                    <path d="M218.51 728.648C113.605 567.785 158.967 352.338 319.83 247.432L599.644 64.9543C704.549 225.817 659.187 441.264 498.324 546.169L218.51 728.648Z" fill="black" />
+                </mask>
+                <g mask="url(#mask0_9618_4617)">
+                    <rect x="-135.609" y="65.0505" width="1157" height="662" fill="url(#pattern0_9618_4617)" />
+                </g>
+                <g style="mix-blend-mode:plus-darker">
+                    <path d="M205.936 711.153C92.2006 536.75 141.381 303.168 315.784 189.433L606.263 1.14255e-05L618.02 18.0285C731.755 192.431 682.574 426.013 508.171 539.748L217.693 729.181L205.936 711.153Z" fill="url(#paint1_linear_9618_4617)" fill-opacity="0.47" />
+                </g>
+                <defs>
+                    <pattern id="pattern0_9618_4617" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_9618_4617" transform="matrix(0.000244412 0 0 0.000427168 -0.000556672 0)" />
+                    </pattern>
+                    <linearGradient id="paint0_linear_9618_4617" x1="313.696" y1="251.434" x2="503.643" y2="542.701" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#2D3955" stop-opacity="0.73" />
+                        <stop offset="0.2" stop-color="#2D3955" stop-opacity="0.2" />
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_9618_4617" x1="229.087" y1="245.972" x2="617.644" y2="482.826" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#2BACCC" />
+                        <stop offset="1" stop-color="#288AB5" stop-opacity="0" />
+                    </linearGradient>
+                    <image id="image0_9618_4617" width="4096" height="2341" preserveAspectRatio="none" xlink:href="images/backgorund-vision-mission.jpg" />
+                </defs>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<section class="section-title relative pt-20 sm:pt-25 md:pt-30 lg:pt-35 xl:pt-40 2xl:pt-44     pb-20 sm:pb-25 md:pb-30 lg:pb-40 xl:pb-50 2xl:pb-63">
+    @@include('../includes/components/helpers/svg/motif-animation.html')
+    <div class="container relative z-10">
+        <div class="mb-12 sm:mb-16 md:mb-20 lg:mb-25 xl:mb-30 2xl:mb-34.5">
+            @@include('../includes/components/helpers/title/title-paragrah.html', {
+                "titleParagraph": {
+                    "line1": "Trade Enablement",
+                    "line2": "Growth Through food",
+                    "description": "Through integrated infrastructure, warehousing, re-export capabilities, and tenant support services, the Hub facilitates:"
+                }
+            })
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 xl:gap-5">
+            @@include('../includes/components/utilities/item-feature-card-small.html', {
+                "itemFeatureCardSmall": {
+                    "iconSVG": "<svg width='92' height='92' viewBox='0 0 92 92' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M12.0754 52.2891C10.5784 44.209 12.0147 35.86 16.1258 28.7447C20.2368 21.6294 26.7526 16.2152 34.5004 13.4766V39.3516L12.0754 52.2891Z' stroke='#F5F6F6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/><path d='M45.9991 46.1509V11.5C52.0436 11.5009 57.9818 13.0899 63.219 16.1078C68.4562 19.1256 72.8086 23.4665 75.8404 28.6958C78.8722 33.925 80.4768 39.8589 80.4938 45.9034C80.5107 51.9479 78.9392 57.8908 75.9368 63.1369C72.9344 68.383 68.6063 72.7482 63.3861 75.7953C58.1659 78.8425 52.2367 80.4647 46.1922 80.4994C40.1478 80.5342 34.2004 78.9803 28.9454 75.9933C23.6905 73.0064 19.3126 68.6912 16.25 63.48L45.9991 46.1509Z' stroke='#F5F6F6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>",
+                    "title": "Increased food trade volume through streamlined cross-border operations"
+                }
+            })
+            @@include('../includes/components/utilities/item-feature-card-small.html', {
+                "itemFeatureCardSmall": {
+                    "iconSVG": "<svg width='104' height='104' viewBox='0 0 104 104' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M52 68.25C59.1797 68.25 65 62.4297 65 55.25C65 48.0703 59.1797 42.25 52 42.25C44.8203 42.25 39 48.0703 39 55.25C39 62.4297 44.8203 68.25 52 68.25Z' stroke='#F5F6F6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/><path d='M32.5 78C34.7705 74.9727 37.7146 72.5156 41.0992 70.8233C44.4838 69.131 48.2159 68.25 52 68.25C55.7841 68.25 59.5162 69.131 62.9008 70.8233C66.2854 72.5156 69.2295 74.9727 71.5 78' stroke='#F5F6F6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/><path d='M84.5 87.75V16.25C84.5 14.4551 83.0449 13 81.25 13L22.75 13C20.9551 13 19.5 14.4551 19.5 16.25V87.75C19.5 89.5449 20.9551 91 22.75 91H81.25C83.0449 91 84.5 89.5449 84.5 87.75Z' stroke='#F5F6F6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/><path d='M39 26H65' stroke='#F5F6F6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>",
+                    "title": "Job creation and SME activation across agriculture, logistics, and services"
+                }
+            })
+            @@include('../includes/components/utilities/item-feature-card-small.html', {
+                "itemFeatureCardSmall": {
+                    "iconSVG": "<svg width='102' height='102' viewBox='0 0 102 102' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M86.0625 25.5H15.9375C14.1771 25.5 12.75 26.9271 12.75 28.6875V79.6875C12.75 81.4479 14.1771 82.875 15.9375 82.875H86.0625C87.8229 82.875 89.25 81.4479 89.25 79.6875V28.6875C89.25 26.9271 87.8229 25.5 86.0625 25.5Z' stroke='#F5F6F6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/><path d='M66.9375 25.5V19.125C66.9375 17.4342 66.2658 15.8127 65.0703 14.6172C63.8748 13.4216 62.2533 12.75 60.5625 12.75H41.4375C39.7467 12.75 38.1252 13.4216 36.9297 14.6172C35.7342 15.8127 35.0625 17.4342 35.0625 19.125V25.5' stroke='#F5F6F6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/><path d='M89.25 47.1392C77.6259 53.8648 64.4296 57.3962 51 57.375C37.5709 57.3964 24.3749 53.8665 12.75 47.1431' stroke='#F5F6F6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/><path d='M44.625 44.625H57.375' stroke='#F5F6F6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>",
+                    "title": "Foreign direct investment attraction in food production and distribution"
+                }
+            })
+            @@include('../includes/components/utilities/item-feature-card-small.html', {
+                "itemFeatureCardSmall": {
+                    "iconSVG": "<svg width='89' height='89' viewBox='0 0 89 89' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M44.5 77.875C62.9325 77.875 77.875 62.9325 77.875 44.5C77.875 26.0675 62.9325 11.125 44.5 11.125C26.0675 11.125 11.125 26.0675 11.125 44.5C11.125 62.9325 26.0675 77.875 44.5 77.875Z' stroke='#F5F6F6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/><path d='M58.4062 44.5C58.4062 66.75 44.5 77.875 44.5 77.875C44.5 77.875 30.5938 66.75 30.5938 44.5C30.5938 22.25 44.5 11.125 44.5 11.125C44.5 11.125 58.4062 22.25 58.4062 44.5Z' stroke='#F5F6F6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/><path d='M13.0234 33.375H75.977' stroke='#F5F6F6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/><path d='M13.0234 55.625H75.977' stroke='#F5F6F6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>",
+                    "title": "Enhanced market access for regional and international producers"
+                }
+            })
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        @@include('../includes/sections/section-card.html')
+    </div>
+</section>
+
+@@include('../includes/sections/section-about-partner.html')
+
+@@include('../includes/footer.html')

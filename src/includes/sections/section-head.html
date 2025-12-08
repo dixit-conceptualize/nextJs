@@ -1,0 +1,19 @@
+<section class="pt-28 md:pt-36 lg:pt-45 xl:pt-54.5 text-center @@sectionHead.class">
+    <div class="container"> 
+        <div class="mb-1.5 flex justify-center w-full">
+            @@include('../components/helpers/bread-crumbs.html', {
+                "breadcrumbs": {
+                    "homeHref": "/",
+                    "homeText": "Home",
+                    "parent1Href": "/",
+                    "parent1Text": "Link 1",
+                    "parent2Href": "/",
+                    "parent2Text": "Link 2",
+                    "current": "About Us"
+                }
+            })
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-light max-w-100 md:max-w-90 lg:max-w-100 xl:max-w-130 2xl:max-w-180 mx-auto uppercase mb-2.5">@@sectionHead.title</h1>
+        <p class="text-gray-500 font-medium text-base md:text-lg lg:text-xl xl:text-22  max-w-112.5 md:max-w-100 lg:max-w-120 xl:max-w-130 2xl:max-w-130 mx-auto">@@sectionHead.subtitle</p>
+    </div>
+</section>

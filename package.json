@@ -1,0 +1,27 @@
+{
+  "name": "adfoodhub",
+  "version": "1.0.0",
+  "description": "AdFoodHub - Tailwind CSS v4 + Webpack minimal setup",
+  "scripts": {
+    "dev": "webpack serve",
+    "build": "webpack --mode production"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.16",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^7.1.2",
+    "file-include-webpack-plugin": "^1.3.9",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.4",
+    "postcss-loader": "^8.1.1",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  },
+  "dependencies": {
+    "three": "^0.181.2",
+    "topojson-client": "^3.1.0"
+  }
+}

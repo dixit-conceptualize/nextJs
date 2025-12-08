@@ -1,0 +1,21 @@
+<div class="bg-blue-500 px-4 sm:px-6 lg:px-8 pt-10 sm:pt-12 pb-10 sm:pb-15.5 relative  bg-[url('../images/background-card.png')] bg-contain bg-top-right bg-no-repeat rounded-3xl w-full text-center min-h-90 sm:min-h-120 md:min-h-133.5 flex justify-center items-center">
+    <span class="absolute pointer-events-none inset-0 bg-[url('../images/background-card-overlay.png')] bg-bottom-left bg-contain bg-no-repeat mix-blend-overlay"></span>
+    <div class="inline-block w-full max-w-md sm:max-w-110 md:max-w-130 lg:max-w-145 mx-auto">
+        <h2 class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold  mb-2">Join the <span class="text-green-400">Hub</span></h2>
+        <p class="text-white text-sm md:text-base lg:text-lg mb-6 md:mb-11 tracking-1">Abu Dhabi, is an economic powehouse with innovation, infrastructure, manpower & viable business environment driving opportunities across diverse sectors.</p>    
+        <div class="flex justify-center gap-3 sm:gap-4 w-full sm:w-auto">
+            @@include('../components/helpers/button/button-white-light.html', {
+                "button": {
+                    "href": "javascript:void(0)",
+                    "text": "I'm a Seller"
+                }
+            })
+            @@include('../components/helpers/button/button-white-light.html', {
+                "button": {
+                    "href": "javascript:void(0)",
+                    "text": "I'm a Buyer"
+                }
+            })
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="tab-pane relative hidden" id="@@tab.id">
+    <div class="fixed w-full h-197 full-height">
+        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+            <source src="@@tab.videoSrc" type="video/mp4" />
+        </video>
+        <span class="absolute top-0 start-0 w-full h-full bg-[linear-gradient(0deg,rgba(102,66,56,0.20)_0%,rgba(102,66,56,0.20)_100%),linear-gradient(0deg,rgba(42,54,85,0.32)_0%,rgba(42,54,85,0.32)_100%),linear-gradient(180deg,rgba(45,57,85,0.73)_0%,rgba(45,57,85,0.20)_20%)] mix-blend-multiply"></span>
+    </div>
+    <span class="absolute top-12.5 md:top-20 lg:top-27.5 -end-20 md:-end-30 lg:-end-41.5 w-62.5 md:w-87.5 lg:w-129 aspect-515/784 bg-[url('../images/brand-line-elements-2.png')] pointer-events-none  bg-cover bg-center mix-blend-overlay"></span>
+    <div class="container relative z-1 h-197 full-height pt-39.5 pb-31.5 flex flex-col">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white  uppercase max-w-85 sm:max-w-95 md:max-w-120 lg:max-w-140 xl:max-w-180 mb-4 md:mb-6 lg:mb-8 xl:mb-9">@@tab.headingHtml</h1>
+        @@include('../components/helpers/button/button-white.html', {
+            "button": {
+                "href": "contact-us.html",
+                "text": "Built With Us"
+            }
+        })
+        <div class="text-lg md:text-xl lg:text-22 xl:text-2xl text-white tracking-1 max-w-66 md:max-w-72 lg:max-w-80 xl:max-w-85 mt-auto ms-auto me-7 md:me-10 lg:me-24 xl:me-39">@@tab.description</div>
+    </div>
+</div>

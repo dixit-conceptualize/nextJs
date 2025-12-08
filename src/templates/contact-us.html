@@ -1,0 +1,220 @@
+@@include('../includes/headers/header.html', {
+    "header": {
+        "class": "header-transparent"
+    }
+})
+
+<section class="bg-gray-500 relative z-1">
+    <div class="absolute w-full h-full full-height">
+        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+            <source src="videos/video-contact.mp4" type="video/mp4" />
+        </video>
+        <span class="absolute top-0 start-0 w-full h-full bg-[linear-gradient(0deg,rgba(102,66,56,0.20)_0%,rgba(102,66,56,0.20)_100%),linear-gradient(0deg,rgba(42,54,85,0.32)_0%,rgba(42,54,85,0.32)_100%),linear-gradient(180deg,rgba(45,57,85,0.73)_0%,rgba(45,57,85,0.20)_20%)] mix-blend-multiply"></span>
+    </div>    
+    <span class="absolute top-12.5 md:top-20 lg:top-27.5 -end-20 md:-end-30 lg:-end-41.5 w-62.5 md:w-87.5 lg:w-129 aspect-515/784 bg-[url('../images/brand-line-elements-2.png')] pointer-events-none  bg-cover bg-center mix-blend-overlay"></span>
+    <div class="container relative z-1 pt-62 full-height pb-45.5 flex flex-col bread-crumbs-white">
+        <div class="mb-7.5">
+            @@include('../includes/components/helpers/bread-crumbs.html', {
+                "breadcrumbs": {
+                    "homeHref": "/",
+                    "homeText": "Home",
+                    "parent1Href": "/",
+                    "parent1Text": "Link 1",
+                    "parent2Href": "/",
+                    "parent2Text": "Link 2",
+                    "current": "Contact Us"
+                }
+            })
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-extrabold  uppercase max-w-80 sm:max-w-90 md:max-w-110 lg:max-w-130 xl:max-w-180">How can we move your vision forward</h1>
+    </div>
+</section>
+
+<section class="pt-12 lg:pt-16 xl:pt-20 2xl:pt-24 w-full relative z-20 bg-white">
+    <div class="container">
+        <h2 class="text-28 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-blue-500 font-extrabold capitalize mb-6 md:mb-8 lg:mb-10 xl:mb-12 2xl:mb-14">Let's get started<br/> with your <span>enquiry</span></h2>
+        <div class="flex flex-col md:flex-row gap-6 lg:gap-5 items-start">
+            <div class="bg-gray-100 rounded-xl xl:rounded-2xl py-6 lg:py-8 xl:py-11 px-4 lg:px-6 w-full">
+                <h3 class="font-semibold text-22 sm:text-2xl md:text-28 lg:text-3xl xl:text-4xl font-serif mb-1.5">Get in Touch</h3>
+                <p class="text-gray-900 text-sm md:text-base mb-8 lg:mb-10 xl:mb-12 2xl:mb-15">Note: all fields are mandatory unless specified as optional</p>
+                <form action="">
+                    <div class="grid grid-cols-12 gap-x-4 sm:gap-x-5 gap-y-5 xl:gap-y-6">
+                        <div class="col-span-12 md:col-span-6">
+                            @@include('../includes/components/helpers/input.html', {
+                                "input": {
+                                    "id": "first-name",
+                                    "name": "firstName",
+                                    "type": "text",
+                                    "label": "First Name",
+                                    "placeholder": "First Name",
+                                    "inputClass": ""
+                                }
+                            })
+                        </div>
+                        <div class="col-span-12 md:col-span-6">
+                            @@include('../includes/components/helpers/input.html', {
+                                "input": {
+                                    "id": "last-name",
+                                    "name": "lastName",
+                                    "type": "text",
+                                    "label": "Last Name",
+                                    "placeholder": "Last Name",
+                                    "inputClass": ""
+                                }
+                            })
+                        </div>
+                        <div class="col-span-12 md:col-span-6">
+                            @@include('../includes/components/helpers/input.html', {
+                                "input": {
+                                    "id": "email",
+                                    "name": "email",
+                                    "type": "email",
+                                    "label": "Email address",
+                                    "placeholder": "info&#64;example.com",
+                                    "inputClass": ""
+                                }
+                            })
+                        </div>
+                        <div class="col-span-12 md:col-span-6">
+                            @@include('../includes/components/helpers/input.html', {
+                                "input": {
+                                    "id": "phone",
+                                    "name": "phone",
+                                    "type": "number",
+                                    "label": "Contact number",
+                                    "placeholder": "+971 xx xxxxxxx",
+                                    "inputClass": ""
+                                }
+                            })
+                        </div>
+                        <div class="col-span-12">
+                            @@include('../includes/components/helpers/select.html', {
+                                "select": {
+                                    "id": "looking-for",
+                                    "name": "lookingFor",
+                                    "label": "What are you looking for?",
+                                    "placeholder": "Select a reason",
+                                    "selectClass": "",
+                                    "option": "<option>General enquiry</option><option>Partnership</option><option>Support</option>"
+                                }
+                            })
+                        </div>
+                        <div class="col-span-12">
+                            @@include('../includes/components/helpers/textarea.html', {
+                                "textarea": {
+                                    "id": "message",
+                                    "name": "message",
+                                    "label": "Message",
+                                    "placeholder": "A short message describing your enquiry",
+                                    "textareaClass": "min-h-45"
+                                }
+                            })
+                        </div>
+                        <div class="col-span-12">
+                            @@include('../includes/components/helpers/button/button-black.html', {
+                                "button": {
+                                    "href": "javascript:void(0)",
+                                    "text": "Send Enquiry"
+                                }
+                            })
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="flex-none w-full md:w-80 lg:w-112.5 xl:w-129.5 bg-blue-500 p-4 lg:p-6 rounded-3xl text-center lg:pb-8 xl:pb-10">
+                <figure class="w-full aspect-470/356 mb-6 lg:mb-8 xl:mb-12 2xl:mb-15.5 overflow-hidden rounded-2xl">
+                    <img src="images/image-brochure.jpg" alt="" class="w-full h-full object-cover">
+                </figure>
+                <h3 class="text-2xl sm:text-28 md:text-3xl lg:text-4xl xl:text-5xl font-light  font-serif text-white mb-2 lg:mb-3 xl:mb-4">Download our<br/> brochure</h3>
+                <p class="text-white text-sm md:text-base font-medium max-w-83 mx-auto mb-6 lg:mb-8 xl:mb-10">Learn more about the region’s pioneering wholesale food trading & logistics development.</p>
+                @@include('../includes/components/helpers/button/button-white.html', {
+                    "button": {
+                        "href": "javascript:void(0)",
+                        "text": "Download Now"
+                    }
+                })
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pt-12 md:pt-16 lg:pt-20 xl:pt-25 2xl:pt-27 w-full relative z-20 bg-white">
+    <div class="container">
+        <h2 class="text-28 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-blue-500 font-extrabold max-w-130 mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-25.5">Connect with us at<br/> our <span>headquarters</span></h2>
+
+        <div class="flex flex-col md:flex-row gap-5">
+            <ul class="md:max-w-62.5 lg:max-w-85 flex-none flex flex-col gap-5 lg:gap-7 xl:gap-8.5 md:pt-4">
+                <li>
+                    <lable class="text-lg md:text-xl lg:text-22 xl:text-2xl font-semibold text-gray-700  capitalize mb-2 lg:mb-3 xl:mb-4 inline-block w-full tracking-1">Where we located</lable>
+                    <p class="text-lg md:text-xl lg:text-22 xl:text-2xl font-medium text-blue-500 opacity-75">Street N405, gate 4 JAFZA jebel ali free zone – Dubai</p>
+                </li>
+                <li>
+                    <lable class="text-lg md:text-xl lg:text-22 xl:text-2xl font-semibold text-gray-700  capitalize mb-2 lg:mb-3 xl:mb-4 inline-block w-full tracking-1">Through Email</lable>
+                    <p class="text-lg md:text-xl lg:text-22 xl:text-2xl font-medium text-blue-500 opacity-75">info@adfoodhub.com</p>
+                </li>
+                <li>
+                    <lable class="text-lg md:text-xl lg:text-22 xl:text-2xl font-semibold text-gray-700  capitalize mb-2 lg:mb-3 xl:mb-4 inline-block w-full tracking-1">Through Call</lable>
+                    <p class="text-lg md:text-xl lg:text-22 xl:text-2xl font-medium text-blue-500 opacity-75">0564179716</p>
+                </li>
+            </ul>
+
+            <div class="inline-block grow aspect-1057/576 rounded-xl overflow-hidden">
+                <iframe class="w-full h-full border-0"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235013.748439434!2d72.41493546186064!3d23.02047409555559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1763381785248!5m2!1sen!2sin"
+                    width="600" height="450" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pt-12 md:pt-15 lg:pt-20 xl:pt-22.5 pb-15 lg:pb-20 xl:pb-25 2xl:pb-30 w-full relative z-20 bg-white">
+    <div class="container">
+        <div class="flex lg:flex-row flex-col gap-6 md:gap-8 lg:gap-15 xl:gap-20 justify-between">
+            <div class="w-84.75 flex-none">
+                <h2 class="text-28 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-blue-500 font-extrabold capitalize mb-4 md:mb-5 lg:mb-5.5">Ask us <span>anything</span></h2>
+                <p class="text-sm md:text-base text-gray-700">Have more questions or need support? Shoot us a message and someone for our team will be happy to help.</p>
+            </div>
+            <div class="grow lg:max-w-219 flex flex-col md:gap-2 lg:gap-3 xl:gap-4">
+                @@include('../includes/components/utilities/item-accordion-small.html', {
+                    "itemAccordionSmall": {
+                        "number": "01",
+                        "title": "Information for suppliers",
+                        "paragraph": "Finest wholesale food trading & logistics platform Step into one of the most comprehensive food trade zones in the Middle East. ecosystem to facilitate wholesale trade and logistics across all food categories.",
+                        "linkHref": "/about-us.html",
+                        "linkText": "More about ADFH"
+                    }
+                })
+                @@include('../includes/components/utilities/item-accordion-small.html', {
+                    "itemAccordionSmall": {
+                        "number": "02",
+                        "title": "Still can’t find something and want to get in touch with us on a specific topic?",
+                        "paragraph": "Finest wholesale food trading & logistics platform Step into one of the most comprehensive food trade zones in the Middle East. ecosystem to facilitate wholesale trade and logistics across all food categories.",
+                        "linkHref": "/about-us.html",
+                        "linkText": "More about ADFH"
+                    }
+                })
+                @@include('../includes/components/utilities/item-accordion-small.html', {
+                    "itemAccordionSmall": {
+                        "number": "03",
+                        "title": "Need a gate pass to enter the free zone?",
+                        "paragraph": "Finest wholesale food trading & logistics platform Step into one of the most comprehensive food trade zones in the Middle East. ecosystem to facilitate wholesale trade and logistics across all food categories.",
+                        "linkHref": "/about-us.html",
+                        "linkText": "More about ADFH"
+                    }
+                })
+                @@include('../includes/components/utilities/item-accordion-small.html', {
+                    "itemAccordionSmall": {
+                        "number": "04",
+                        "title": "Information for suppliers",
+                        "paragraph": "Finest wholesale food trading & logistics platform Step into one of the most comprehensive food trade zones in the Middle East. ecosystem to facilitate wholesale trade and logistics across all food categories.",
+                        "linkHref": "/about-us.html",
+                        "linkText": "More about ADFH"
+                    }
+                })
+            </div>
+        </div>
+    </div>
+</section>
+
+@@include('../includes/footer.html')
