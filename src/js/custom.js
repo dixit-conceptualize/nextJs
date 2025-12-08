@@ -14,7 +14,7 @@ container.appendChild(renderer.domElement);
 
 // Camera
 const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 2000);
-camera.position.set(0, 0, 220);
+camera.position.set(0, 0, 260);
 
 // Controls
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -24,6 +24,12 @@ controls.minDistance = 60;
 controls.maxDistance = 600;
 controls.autoRotate = true;
 controls.autoRotateSpeed = 0.25;
+
+// === LOCK vertical rotation: only allow left-right rotation ===
+// Set both minPolarAngle and maxPolarAngle to the same value (equator) so user can't rotate up/down
+// This forces rotation purely around the Y axis (left-right).
+controls.minPolarAngle = Math.PI / 2;
+controls.maxPolarAngle = Math.PI / 2;
 
 // Lighting (not crucial for lines but included)
 const ambient = new THREE.AmbientLight(0xffffff, 0.6);
@@ -36,12 +42,11 @@ scene.add(dir);
 const RADIUS = 80;
 const resolution = 3; // increase for smoother curves (not heavy)
 
-// Material for grid and borders
+// Material for country borders (front)
 const lineMaterial = new THREE.LineBasicMaterial({
 	color: 0xffffff,
 	transparent: true,
-	opacity: 0.95,
-	// linewidth not reliably supported across browsers, but kept
+	opacity: 1.0,        // stronger front border opacity
 	linewidth: 1
 });
 
@@ -49,17 +54,26 @@ const lineMaterial = new THREE.LineBasicMaterial({
 const lineBackMaterial = new THREE.LineBasicMaterial({
 	color: 0xffffff,
 	transparent: true,
-	opacity: 0.15,
+	opacity: 1.0,
 	linewidth: 1
 });
 
-// Material for dots on countries
+// Highlight stroke for country borders (slightly offset, brighter)
+// This will be created after the main front lines and placed renderOrder above them.
+const highlightMaterial = new THREE.LineBasicMaterial({
+	color: 0xffffff,
+	transparent: true,
+	opacity: 1.0,
+	linewidth: 1
+});
+
+// Material for dots on countries (reduced opacity per request)
 const dotMaterial = new THREE.PointsMaterial({
 	color: 0xffffff,
-	size: 1.2,
+	size: 0.9,               // slightly smaller
 	sizeAttenuation: true,
 	transparent: true,
-	opacity: 0.8
+	opacity: 0.5           // much lower opacity -> subtle country fill
 });
 
 // ---------- Utility: lat/lon -> 3D on sphere ----------
@@ -73,17 +87,28 @@ function latLonToVector3(lat, lon, radius = RADIUS) {
 }
 
 // ---------- Add parallels / meridians (lat/long grid) ----------
+// Build grid on a slightly LARGER radius so lines appear raised over the landmasses
 function buildLatLonGrid() {
 	const gridGroup = new THREE.Group();
+
+	const gridRadius = RADIUS + 3; // raise grid slightly above country geometry
+
+	// Create a dedicated material for grid so we can tweak depthTest / opacity separately
+	const gridMaterial = new THREE.LineBasicMaterial({
+		color: 0xffffff,
+		transparent: true,
+		opacity: 0.25,
+		linewidth: 1
+	});
 
 	// Meridians (longitudes)
 	for (let lon = -180; lon <= 180; lon += 15) {
 		const points = [];
 		for (let lat = -90; lat <= 90; lat += 1 * resolution) {
-			points.push(latLonToVector3(lat, lon));
+			points.push(latLonToVector3(lat, lon, gridRadius));
 		}
 		const geom = new THREE.BufferGeometry().setFromPoints(points);
-		const line = new THREE.Line(geom, lineMaterial);
+		const line = new THREE.Line(geom, gridMaterial);
 		gridGroup.add(line);
 	}
 
@@ -91,28 +116,29 @@ function buildLatLonGrid() {
 	for (let lat = -60; lat <= 80; lat += 15) {
 		const points = [];
 		for (let lon = -180; lon <= 180; lon += 1 * resolution) {
-			points.push(latLonToVector3(lat, lon));
+			points.push(latLonToVector3(lat, lon, gridRadius));
 		}
 		const geom = new THREE.BufferGeometry().setFromPoints(points);
-		const line = new THREE.Line(geom, lineMaterial);
+		const line = new THREE.Line(geom, gridMaterial);
 		gridGroup.add(line);
 	}
 
 	// Equator emphasised (optional)
 	{
 		const points = [];
-		for (let lon = -180; lon <= 180; lon += 0.5) points.push(latLonToVector3(0, lon));
+		for (let lon = -180; lon <= 180; lon += 0.5) points.push(latLonToVector3(0, lon, gridRadius));
 		const g = new THREE.BufferGeometry().setFromPoints(points);
 		const eq = new THREE.Line(g, new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.98 }));
 		gridGroup.add(eq);
 	}
 
+	// Make sure grid renders above country lines & dots to create layered 3D effect
+	gridGroup.renderOrder = 4;
 	return gridGroup;
 }
 
-// Add grid with render order for proper layering
+// Add grid (raised slightly)
 const grid = buildLatLonGrid();
-grid.renderOrder = 0; // Grid goes behind everything
 scene.add(grid);
 
 // ---------- Load topological world data and draw country outlines ----------
@@ -166,7 +192,7 @@ async function loadAndDrawCountries() {
 			scene.add(linesBack);
 		}
 
-		// Create dots for all countries
+		// Create subtle dots for all countries
 		if (dotPositions.length > 0) {
 			const dotArray = new Float32Array(dotPositions);
 			const dotGeom = new THREE.BufferGeometry();
@@ -174,6 +200,27 @@ async function loadAndDrawCountries() {
 			const dots = new THREE.Points(dotGeom, dotMaterial);
 			dots.renderOrder = 3;
 			scene.add(dots);
+		}
+
+		// ---------- Create a highlighted border stroke by slightly scaling front positions outward ----------
+		// This makes country borders "pop" more without changing topo coordinates.
+		if (positionsFront.length > 0) {
+			// small scale factor to offset outward from center
+			const scaleFactor = 1.008; // tweak if needed (1.0 = no offset)
+			const highlightArr = new Float32Array(positionsFront.length);
+			for (let i = 0; i < positionsFront.length; i += 3) {
+				const x = positionsFront[i], y = positionsFront[i + 1], z = positionsFront[i + 2];
+				// scale vector slightly away from origin
+				highlightArr[i] = x * scaleFactor;
+				highlightArr[i + 1] = y * scaleFactor;
+				highlightArr[i + 2] = z * scaleFactor;
+			}
+			const geoHighlight = new THREE.BufferGeometry();
+			geoHighlight.setAttribute('position', new THREE.BufferAttribute(highlightArr, 3));
+			const linesHighlight = new THREE.LineSegments(geoHighlight, highlightMaterial);
+			// render above everything so the outline clearly reads
+			linesHighlight.renderOrder = 5;
+			scene.add(linesHighlight);
 		}
 
 	} catch (err) {
