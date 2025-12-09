@@ -6,6 +6,15 @@ const scene = new THREE.Scene();
 
 // Renderer with transparent background
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+
+// CSS2DRenderer is now available via THREE.CSS2DRenderer
+// const labelRenderer = new THREE.CSS2DRenderer();
+// labelRenderer.setSize(container.clientWidth, container.clientHeight);
+// labelRenderer.domElement.style.position = "absolute";
+// labelRenderer.domElement.style.top = "0px";
+// labelRenderer.domElement.style.pointerEvents = "none";
+// container.appendChild(labelRenderer.domElement);
+
 renderer.setPixelRatio(window.devicePixelRatio || 1);
 renderer.setSize(container.clientWidth, container.clientHeight);
 renderer.setClearColor(0x000000, 0); // alpha = 0 -> transparent
@@ -14,16 +23,17 @@ container.appendChild(renderer.domElement);
 
 // Camera
 const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 2000);
-camera.position.set(0, 0, 260);
+camera.position.set(0, 0, 460);
 
-// Controls
-const controls = new OrbitControls(camera, renderer.domElement);
+// Controls - OrbitControls is now available via THREE.OrbitControls
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.08;
 controls.minDistance = 60;
 controls.maxDistance = 600;
 controls.autoRotate = true;
-controls.autoRotateSpeed = 0.25;
+controls.autoRotateSpeed = 5.0; // Increased from 0.25 to 1.0 for faster rotation
+controls.enableZoom = false;
 
 // === LOCK vertical rotation: only allow left-right rotation ===
 // Set both minPolarAngle and maxPolarAngle to the same value (equator) so user can't rotate up/down
@@ -64,7 +74,7 @@ const highlightMaterial = new THREE.LineBasicMaterial({
 	color: 0xffffff,
 	transparent: true,
 	opacity: 1.0,
-	linewidth: 1
+	linewidth: 2
 });
 
 // Material for dots on countries (reduced opacity per request)
@@ -73,8 +83,17 @@ const dotMaterial = new THREE.PointsMaterial({
 	size: 0.9,               // slightly smaller
 	sizeAttenuation: true,
 	transparent: true,
-	opacity: 0.5           // much lower opacity -> subtle country fill
+	opacity: 0.75           // much lower opacity -> subtle country fill
 });
+
+// --- UAE fill material (white) ---
+const uaeFillMaterial = new THREE.PointsMaterial({
+	color: 0xffffff,      // white
+	size: 1.2,
+	sizeAttenuation: true,
+	transparent: true,
+	opacity: 1.0          // fully opaque white fill
+})
 
 // ---------- Utility: lat/lon -> 3D on sphere ----------
 function latLonToVector3(lat, lon, radius = RADIUS) {
@@ -91,7 +110,7 @@ function latLonToVector3(lat, lon, radius = RADIUS) {
 function buildLatLonGrid() {
 	const gridGroup = new THREE.Group();
 
-	const gridRadius = RADIUS + 3; // raise grid slightly above country geometry
+	const gridRadius = RADIUS + 4; // raise grid slightly above country geometry
 
 	// Create a dedicated material for grid so we can tweak depthTest / opacity separately
 	const gridMaterial = new THREE.LineBasicMaterial({
@@ -159,9 +178,30 @@ async function loadAndDrawCountries() {
 		const positionsFront = [];
 		const positionsBack = [];
 		const dotPositions = [];
+		const uaeDots = [];
 
 		for (const feat of features) {
 			const geom = feat.geometry;
+			const props = feat.properties || {};
+
+			if (
+				feat.id === 784 ||
+				feat.id === "784" ||
+				props.iso_a3 === "ARE" ||
+				props.ISO_A3 === "ARE" ||
+				props.name === "United Arab Emirates" ||
+				props.ADMIN === "United Arab Emirates"
+			) {
+				if (geom.type === 'Polygon') {
+					addCountryDots(geom.coordinates, uaeDots);
+				} else if (geom.type === 'MultiPolygon') {
+					for (const poly of geom.coordinates) {
+						addCountryDots(poly, uaeDots);
+					}
+				}
+				continue; // skip UAE from general dots
+			}
+
 			// geometry types: Polygon or MultiPolygon
 			if (geom.type === 'Polygon') {
 				pushPolygonLine(geom.coordinates, positionsFront, positionsBack);
@@ -200,6 +240,18 @@ async function loadAndDrawCountries() {
 			const dots = new THREE.Points(dotGeom, dotMaterial);
 			dots.renderOrder = 3;
 			scene.add(dots);
+		}
+
+		// ---------- Create UAE specific fill (white) ----------
+		if (uaeDots.length > 0) {
+			const uaeArr = new Float32Array(uaeDots);
+			const uaeGeom = new THREE.BufferGeometry();
+			uaeGeom.setAttribute('position', new THREE.BufferAttribute(uaeArr, 3));
+
+			const uaeMesh = new THREE.Points(uaeGeom, uaeFillMaterial);
+			// Ensure UAE draws on top
+			uaeMesh.renderOrder = 10;
+			scene.add(uaeMesh);
 		}
 
 		// ---------- Create a highlighted border stroke by slightly scaling front positions outward ----------
@@ -356,8 +408,11 @@ function onWindowResize() {
 // ---------- Animation loop ----------
 function animate() {
 	requestAnimationFrame(animate);
+
 	controls.update();
 	renderer.render(scene, camera);
+
+	//labelRenderer.render(scene, camera); // TEXT RENDER
 }
 
 // ---------- Kick off ----------
@@ -371,3 +426,90 @@ console.log('Wireframe globe running. Serve over http(s). Adjust controls.autoRo
 window.addEventListener('keydown', (e) => {
 	if (e.key === 'r') controls.autoRotate = !controls.autoRotate;
 });
+
+
+// ===========================
+// EXACT 4-CORNER SHAPE LIKE SCREENSHOT
+// ===========================
+// function createLabel(text, position) {
+// 	const div = document.createElement("div");
+
+// 	div.style.color = "#ffffff";
+// 	div.style.fontSize = "14px";
+// 	div.style.fontWeight = "600";
+// 	div.style.lineHeight = "1.2em";
+// 	div.style.pointerEvents = "none";
+// 	div.style.whiteSpace = "nowrap";
+// 	div.style.top = "-40px";
+
+// 	div.innerHTML = text.replace(/\n/g, "<br>");
+
+// 	const label = new THREE.CSS2DObject(div);
+// 	label.position.copy(position);
+
+// 	return label;
+// }
+
+function createScreenshotStyleFrame(size = 140, inward = 180) {
+
+	const frame = new THREE.Group();
+	const material = new THREE.LineBasicMaterial({
+		color: 0xffffff,
+		transparent: true,
+		opacity: 1.0,
+		linewidth: 1
+	});
+
+	function L(a, b) {
+		return new THREE.Line(
+			new THREE.BufferGeometry().setFromPoints([a, b]),
+			material
+		);
+	}
+
+	// DOT MATERIAL + FUNCTION
+	const dotMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+
+	function createDot(position, size = 3) {
+		const geo = new THREE.SphereGeometry(size, 16, 16);
+		const mesh = new THREE.Mesh(geo, dotMaterial);
+		mesh.position.copy(position);
+		return mesh;
+	}
+
+	const s = size;
+	const d = inward;
+
+	// 4 front + inner corners
+	const TL = new THREE.Vector3(-s, s, 0);
+	const TR = new THREE.Vector3(s, s, 0);
+	const TLi = new THREE.Vector3(-s * 0.5, s * 0.5, -d);
+	const TRi = new THREE.Vector3(s * 0.5, s * 0.5, -d);
+
+	// Lines
+	frame.add(L(TL, TR));
+	frame.add(L(TL, TLi));
+	frame.add(L(TR, TRi));
+	frame.add(L(TLi, TRi));
+
+	// ⭐ Add Dots (4 points)
+	frame.add(createDot(TL, 2));
+	frame.add(createDot(TR, 2));
+	frame.add(createDot(TLi, 2));
+	frame.add(createDot(TRi, 2));
+
+	// --- ADD TEXT LABELS ---
+	// frame.add(createLabel("14 KM<br>MAIN TRAIN<br/> STATION", TL));
+	// frame.add(createLabel("12 KM<br>SEA PORT", TR));
+	// frame.add(createLabel("08 KM<br>CITY AREA", TLi));
+	// frame.add(createLabel("03 KM<br>AIRPORT", TRi));
+
+
+	frame.position.set(0, -120, 90);
+	return frame;
+}
+
+
+// Create corner frame before using it
+// const frame = createScreenshotStyleFrame();
+// scene.add(frame);
